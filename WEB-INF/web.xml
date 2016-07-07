@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+  <display-name>UserManager5</display-name>
+ 
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>LoginClServlet</servlet-name>
+    <servlet-class>com.jiangtao.controller.LoginClServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>UserClServlet</servlet-name>
+    <servlet-class>com.jiangtao.controller.UserClServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>LoginTimeCookie</servlet-name>
+    <servlet-class>LoginTimeServlet.LoginTimeCookie</servlet-class>
+  </servlet>
+
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>InitServlet</servlet-name>
+    <servlet-class>com.jiangtao.controller.InitServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GotoManage</servlet-name>
+    <servlet-class>com.jiangtao.controller.GotoManage</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>CreateCode</servlet-name>
+    <servlet-class>com.jiangtao.util.CreateCode</servlet-class>
+  </servlet>
+
+ <!--中文乱码处理过滤-->  
+    <filter>
+        <filter-name>EncodingFilter</filter-name><!--过滤器名称-->
+        <filter-class>com.jiangtao.filter.SetCharacterEncodingFilter2</filter-class><!--过滤器类名称，包括包名一致、写全 -->
+        <init-param><!--初始化参数,要指定的字符集编码 -->
+            <param-name>encoding</param-name><!--参数名称 -->
+            <param-value>utf-8</param-value><!--参数值 -->
+        </init-param>
+        
+    </filter>
+    <filter-mapping>
+        <filter-name>EncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern> <!--“/*”表示项目下所有资源 -->
+    </filter-mapping>
+  <servlet-mapping>
+    <servlet-name>LoginClServlet</servlet-name>
+    <url-pattern>/LoginClServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>UserClServlet</servlet-name>
+    <url-pattern>/UserClServlet</url-pattern>
+  </servlet-mapping>
+ 
+  <servlet-mapping>
+    <servlet-name>LoginTimeCookie</servlet-name>
+    <url-pattern>/LoginTimeCookie</url-pattern>
+  </servlet-mapping>
+ 
+  <servlet-mapping>
+    <servlet-name>InitServlet</servlet-name>
+    <url-pattern>/InitServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>GotoManage</servlet-name>
+    <url-pattern>/GotoManage</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CreateCode</servlet-name>
+    <url-pattern>/CreateCode</url-pattern>
+  </servlet-mapping>
+ 
+</web-app>
